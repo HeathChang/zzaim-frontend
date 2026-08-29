@@ -1,3 +1,15 @@
+> [!IMPORTANT]
+> **이 저장소는 더 이상 사용하지 않습니다.**
+> 작업 초기에 이곳으로 잘못 푸시되었고, 실제 코드는
+> **[HeathChang/nullong2_viewer](https://github.com/HeathChang/nullong2_viewer)** 에 있습니다.
+> 아래 내용은 그 시점의 사본이며 갱신되지 않습니다.
+>
+> **정리하려면** — Settings → Branches 에서 기본 브랜치를 `main` 으로 바꾼 뒤,
+> Branches 목록에서 `claude/markdown-json-viewer-umyky5` 와 `tmp-delete-probe` 를 지우면 됩니다.
+> (기본 브랜치는 GitHub 이 삭제를 막기 때문에 먼저 바꿔야 합니다.)
+
+---
+
 # Nullong Viewer
 
 로컬에 있는 **마크다운 · JSON · YAML · 텍스트**를 폴더째 열어 읽는 정적 웹 뷰어입니다.
@@ -32,24 +44,3 @@ npm run dev      # http://localhost:5173
 > **`index.html`을 더블클릭해서 열면 동작하지 않습니다.**
 > File System Access API 는 보안 컨텍스트(HTTPS 또는 `localhost`)를 요구합니다.
 > `npm run dev` 로 띄우거나 정적 호스팅에 배포해서 쓰세요.
-
-## 배포
-
-```
-npm run build              # dist/ 에 정적 파일만 생성됩니다
-BASE_PATH=/repo/ npm run build   # GitHub Pages 등 서브경로 배포
-```
-
-## 상태
-
-M1(폴더 열기 · 트리 · 마크다운 · JSON/YAML 트리 · 텍스트 · 테마 · 빠른 찾기) 완료.
-M2 중 형식 칩 필터 · 미지원 파일 표시 · 목차 · 문서에서 찾기 · 상대경로 이미지 ·
-변경 감지 · 이어 읽기 완료. 남은 것은 Mermaid · KaTeX 와 인코딩 추론 실사용 검증입니다. `src/` 는 features 기반 구조로 정리했습니다
-(`app → features → entities → shared`, 단방향 import).
-
-이번 버전은 **읽기 전용**입니다. 폴더 권한을 `read` 로만 요청하므로 파일을 덮어쓸 경로가
-아예 없습니다. 편집·저장은 설계를 남겨 두고 다음 버전에서 다시 꺼냅니다.
-
-전체 계획과 남은 마일스톤은 [docs/PLAN.md](docs/PLAN.md) 를 보세요.
-
-`examples/sample/` 에 한국어·일본어·스페인어가 섞인 시험용 폴더가 들어 있습니다.
