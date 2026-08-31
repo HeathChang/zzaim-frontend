@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.local
+
+# 폰트는 빌드 산출물이다 — scripts/subset-fonts.mjs 가 만든다 (zz-0 D7).
+# 원본(.otf)은 라이선스 원문과 함께 assets/fonts-src/ 에 둔다.
+public/fonts/*.woff2
+
+# Playwright
+test-results/
+playwright-report/
