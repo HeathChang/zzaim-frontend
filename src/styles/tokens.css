@@ -1,0 +1,94 @@
+/* zz-0 D4 — 색·서체·간격의 단일 출처.
+   실값 출처는 design/_ds/classical-.../styles.css (DS:10–42). 여기서만 정의하고,
+   Tailwind·컴포넌트는 이 변수를 참조한다. 하드코딩 hex 는 lint 로 막는다. */
+:root {
+  /* ── 색 (DS:5–10) */
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201f1d;
+  --color-accent: #b68235;
+  --color-accent-2: #ac803e;
+  --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
+
+  /* ── 중립 램프 (DS:14–22) */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  /* ── 강조 램프 (DS:24–32)
+     ⚠ --color-accent(#b68235)는 배경 대비 ≈3.0:1 로 AA 본문(4.5:1) 미달이다.
+     24px 미만 텍스트에는 --color-accent-700 만 쓴다 (zz-0 D4 · lint 로 강제). */
+  --color-accent-100: #fff3e4;
+  --color-accent-200: #ffe3bf;
+  --color-accent-300: #facb8d;
+  --color-accent-400: #e1ad66;
+  --color-accent-500: #c28d41;
+  --color-accent-600: #a06f24;
+  --color-accent-700: #7d5411;
+  --color-accent-800: #5a3b0a;
+  --color-accent-900: #3a270d;
+
+  /* ── 서체 (DS:44–48 · zz-0 D7)
+     한글은 Noto 로 폴백된다 — Cormorant/Lora 는 라틴 전용이다. */
+  --font-heading: "Cormorant Garamond", "Noto Sans KR", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Lora", "Noto Sans KR", system-ui, sans-serif;
+  --font-paper: "Noto Serif KR", serif; /* 지면 본문 — 조판 정확도가 걸린 폰트 */
+
+  /* ── 간격 (DS:50–55) */
+  --space-1: 4.6px;
+  --space-2: 9.2px;
+  --space-3: 13.8px;
+  --space-4: 18.4px;
+  --space-6: 27.6px;
+  --space-8: 36.8px;
+
+  /* ── 모서리·그림자 (DS:57–64) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+
+  /* ── 도구 UI 골격 (zz-0 D5 — SS부록D 채택, HO 와 다른 값은 주석에)
+     상태바 32 (HO 는 36) · 도움말 640 (HO 는 600) */
+  --size-header: 40px;
+  --size-statusbar: 32px;
+  --size-panel: 320px;
+  --size-panel-narrow: 280px;
+  --size-panel-wide: 480px;
+  --size-dialog: 480px;
+  --size-help: 640px;
+  --size-help-max-h: 78vh; /* HO§도구UI크기 — SS부록D 는 높이를 정하지 않았다 */
+  --breakpoint-narrow: 1280px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-2);
+}
+
+/* SS§1.6 — 포커스는 2px 실선. 마우스 클릭에는 숨긴다. */
+:focus-visible { outline: 2px solid var(--color-accent-700); outline-offset: 2px; }
+:focus:not(:focus-visible) { outline: none; }

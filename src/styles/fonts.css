@@ -1,0 +1,102 @@
+/* zz-0 D7 — 폰트는 self-host. CDN 금지 (HO§구현전반영1 · PP§6.4).
+   폰트가 대체 폰트로 떨어지는 순간 조판이 전부 밀리고 «인쇄하면 화면 그대로»가 깨진다.
+
+   두 벌을 둔다:
+   - `*-subset.woff2` — KS X 1001 2,350자 + 상용 한자. 기본으로 로드
+   - `*-full.woff2`   — 서브셋 밖 글자를 만났을 때만 추가 로드 (fontCoverage.ts)
+
+   ⚠ 폰트 바이너리는 이 저장소에 없다. `npm run fonts:subset` 이 만든다.
+   없으면 시스템 폰트로 떨어지고 **측정이 어긋난다** — 개발 빌드가 경고한다. */
+
+@font-face {
+  font-family: "Noto Serif KR";
+  src: url("/fonts/noto-serif-kr-400-subset.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block; /* 폰트 없이 그려진 화면을 측정하면 안 된다 (PP§6.4) */
+}
+@font-face {
+  font-family: "Noto Serif KR";
+  src: url("/fonts/noto-serif-kr-600-subset.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/fonts/noto-sans-kr-400-subset.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/fonts/noto-sans-kr-500-subset.woff2") format("woff2");
+  font-weight: 500;
+  font-display: block;
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/fonts/noto-sans-kr-700-subset.woff2") format("woff2");
+  font-weight: 700;
+  font-display: block;
+}
+
+/* 라틴 전용 — DS:2 가 400·600 두 굵기를 쓴다.
+   600 을 self-host 하지 않으면 표제가 합성 굵기로 떨어진다 (zz-0 D7). */
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/lora-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/lora-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+
+/* ── 한자본 — 한자가 든 시험지에서만 받는다.
+   한글본과 **글자가 겹치지 않으므로** 같은 글자를 두 번 받지 않는다.
+   브라우저가 글자마다 스택에서 가진 쪽을 고른다.
+   실측: 894 KB. 이걸 기본에 넣으면 첫 진입이 336 KB -> 1,235 KB 가 된다. */
+@font-face {
+  font-family: "Noto Serif KR Hanja";
+  src: url("/fonts/noto-serif-kr-400-hanja.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Noto Serif KR Hanja";
+  src: url("/fonts/noto-serif-kr-600-hanja.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+
+/* ── 전체본 — 평소에는 **로드하지 않는다.**
+   서브셋 밖 글자(고전 한자·희귀자)를 만났을 때만 `fontFallback.ts` 가 켠다.
+   `font-family` 이름을 서브셋과 다르게 둔 이유: 같은 이름으로 두면 브라우저가
+   `unicode-range` 없이 둘을 합쳐 **언제 어느 쪽으로 그려질지 통제할 수 없다.**
+   전체본이 필요해지면 지면 폰트 스택 자체를 바꿔 끼운다. */
+@font-face {
+  font-family: "Noto Serif KR Full";
+  src: url("/fonts/noto-serif-kr-400-full.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Noto Serif KR Full";
+  src: url("/fonts/noto-serif-kr-600-full.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
