@@ -1,0 +1,114 @@
+/* 지면 전용 스타일.
+   여기 값은 전부 HO§지면본문서식에서 왔다. **지어낸 값이 없다.**
+
+   시트 안의 값은 배율과 무관하게 언제나 실제 크기다 — 그래야 인쇄에서
+   `transform` 만 지우면 1:1이 된다 (zz-2 불변4). */
+
+.zz-sheet {
+  background: #fff;
+  box-shadow: 0 2px 12px rgb(45 43 43 / 20%);
+  overflow: hidden;
+  position: relative;
+  transform-origin: top left;
+  font-family: var(--font-paper);
+  color: var(--color-text);
+}
+
+/* 배치 결과를 그대로 그린다. 각 아이템 래퍼에 break-inside: avoid */
+.zz-item {
+  break-inside: avoid;
+}
+
+.zz-question {
+  display: flex;
+  gap: 0.45em;
+  line-height: 1.62;
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
+
+/* 번호 폭을 고정으로 예약한다 — `9.` 이 `10.` 이 되어도 높이가 변하지 않는다.
+   예약하지 않으면 채번이 바뀔 때마다 전체 재측정이 필요해진다 (zz-2 D5) */
+.zz-number {
+  width: 2.5em;
+  flex: none;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.zz-choices {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.25em;
+}
+
+.zz-passage {
+  line-height: 1.7;
+  text-align: justify;
+  padding: 0.6em 0.7em;
+  margin-bottom: 0.6em;
+}
+
+.zz-passage[data-box='border'] {
+  border: 1px solid rgb(32 31 29 / 70%);
+}
+
+/* 학교 인쇄는 등사기를 거치는 경우가 많아 명암 대비가 약하다.
+   그래서 **테두리가 기본**이고 음영은 선택이다 (PP§6.4) */
+.zz-passage[data-box='shade'] {
+  background: rgb(32 31 29 / 7%);
+}
+
+.zz-instruction {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.zz-folio,
+.zz-closing {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.zz-closing {
+  letter-spacing: 0.05em;
+}
+
+/* 머리말 아래 이중 괘선 */
+.zz-paper-header {
+  border-bottom: 1.5px solid var(--color-text);
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.zz-paper-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  border-bottom: 0.5px solid var(--color-text);
+}
+
+.zz-blank {
+  border-bottom: 1px solid var(--color-text);
+  display: inline-block;
+}
+
+/* 서술형 답안 공간 */
+.zz-spacer[data-ruled='true'] {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.62em - 1px),
+    rgb(32 31 29 / 35%) calc(1.62em - 1px),
+    rgb(32 31 29 / 35%) 1.62em
+  );
+}
+
+.zz-divider {
+  border-top: 1px solid var(--color-divider);
+}

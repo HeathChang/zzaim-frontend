@@ -1,0 +1,86 @@
+/* 인쇄 전용 CSS — zz-2 소유(zz-2 D9), 규칙은 zz-6 이 정의한다.
+   Tailwind 밖 순수 CSS 로 관리한다 (PP§9.1).
+
+   ⚠ 여기에 `@page` 를 쓰지 않는다. 용지 크기가 런타임에 바뀌므로
+      `print/pageRule.ts` 가 주입한다. 정적·주입 둘 다 있으면 나중 것이 이기고,
+      프로토타입의 `@page { margin: 0.5cm }` 가 섞이면 여백이 5mm 밀린다.
+      `scripts/check-page-rules.mjs` 가 빌드 산출물에서 이를 막는다. */
+
+@media print {
+  /* 화면 전용 요소는 인쇄에서 사라진다 */
+  [data-print='hide'] {
+    display: none !important;
+  }
+
+  /* 지면을 감싼 래퍼가 폭을 제한하면 인쇄에서 잘린다 */
+  [data-print='pageouter'] {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 스크롤 영역의 높이 제한을 푼다 — 안 풀면 한 쪽만 나간다 */
+  [data-print='scroll'] {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* 두 쪽 보기의 가로 배열을 푼다.
+     ⚠ **여백(padding)도 반드시 푼다.** 미리보기는 위아래에 여유를 두는데,
+     그 26px 이 남으면 첫 시트가 그만큼 밀려 **한 장이 두 쪽으로 흐른다** —
+     3장짜리 시험지가 6쪽으로 나온다(실제로 그랬다) */
+  [data-print='spread'] {
+    display: block !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 앱 셸의 화면 높이 제한을 푼다 */
+  [data-print='app'] {
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* 지면은 실제 크기로 나간다.
+     화면에서는 배율을 `transform: scale()` 로 주는데, 인쇄에서 그게 남으면
+     **축소된 지면이 종이에 그대로 나간다.** 인라인 스타일을 이겨야 하므로
+     `!important` 가 필요하다. */
+  [data-print='sheet'] {
+    transform: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+
+  /* ★ 쪽 나눔은 **앞에서** 건다.
+   *
+   *  시트는 정확히 한 쪽 높이라 그 끝이 이미 쪽 경계다. 거기에 `break-after` 를
+   *  걸면 브라우저가 **빈 쪽을 하나 더 만든다** — 3장짜리가 5쪽으로 나왔다.
+   *  `break-before` 는 이미 쪽 첫머리면 무시되므로 빈 쪽이 생기지 않는다.
+   *  첫 시트에는 걸지 않는다(`~` 로 두 번째 이후만 고른다). */
+  [data-print='pageouter'] ~ [data-print='pageouter'] [data-print='sheet'] {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* 문항은 쪽 경계에서 잘리지 않는다 — 이 제품이 파는 것 자체다 */
+  [data-print='sheet'] .zz-item {
+    break-inside: avoid;
+  }
+
+  /* 등사기 대응 — 배경을 그대로 내보낸다. **다만 브라우저 설정을 이길 수는 없다**
+     그래서 S-06 체크리스트가 «배경 그래픽 켜기»를 안내한다 (zz-6 D8) */
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
