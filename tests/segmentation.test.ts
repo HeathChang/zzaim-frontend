@@ -7,6 +7,7 @@
  *  실물 시험지 10장을 구하면 즉시 교체한다. */
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { RANGE_RE } from '@/importing/patterns'
 import { describe, expect, it } from 'vitest'
 import { purify, toBlocks } from '@/importing/sanitize'
 import { segmentAll } from '@/importing/segment'
@@ -122,5 +123,16 @@ describe('경계 휴리스틱 — 코퍼스 실측', () => {
         expect(ratio, `${file}: 틀렸는데 의심 ${Math.round(ratio * 100)}%`).toBeGreaterThan(0.1)
       }
     }
+  })
+})
+
+describe('지시문 물결표 — 수능은 전각을 쓴다', () => {
+  it('★ `[1～3]`(전각 U+FF5E) 를 지문 경계로 잡는다 — 실제 수능 PDF 에서 지문 0개였다', () => {
+    expect(RANGE_RE.test('[1～3] 다음 글을 읽고 물음에 답하시오.')).toBe(true)
+    expect(RANGE_RE.exec('[10～13] 다음 글을 읽고')?.slice(1, 3)).toEqual(['10', '13'])
+  })
+
+  it('반각·물결 대시·하이픈도 그대로 받는다', () => {
+    for (const s of ['[1~3]', '[1〜3]', '[1-3]', '[1–3]']) expect(RANGE_RE.test(s)).toBe(true)
   })
 })
