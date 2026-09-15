@@ -1,0 +1,620 @@
+{
+"ha:CaretPosition": [
+"listIDRef",
+"paraIDRef",
+"pos"
+],
+"ha:HWPApplicationSetting": [
+"xmlns:config",
+"xmlns:ha"
+],
+"hc:fillBrush": [],
+"hc:intent": [
+"unit",
+"value"
+],
+"hc:left": [
+"unit",
+"value"
+],
+"hc:next": [
+"unit",
+"value"
+],
+"hc:prev": [
+"unit",
+"value"
+],
+"hc:right": [
+"unit",
+"value"
+],
+"hc:winBrush": [
+"alpha",
+"faceColor",
+"hatchColor"
+],
+"hh:align": [
+"horizontal",
+"vertical"
+],
+"hh:autoSpacing": [
+"eAsianEng",
+"eAsianNum"
+],
+"hh:backSlash": [
+"Crooked",
+"isCounter",
+"type"
+],
+"hh:beginNum": [
+"endnote",
+"equation",
+"footnote",
+"page",
+"pic",
+"tbl"
+],
+"hh:border": [
+"borderFillIDRef",
+"connect",
+"ignoreMargin",
+"offsetBottom",
+"offsetLeft",
+"offsetRight",
+"offsetTop"
+],
+"hh:borderFill": [
+"breakCellSeparateLine",
+"centerLine",
+"id",
+"shadow",
+"threeD"
+],
+"hh:borderFills": [
+"itemCnt"
+],
+"hh:bottomBorder": [
+"color",
+"type",
+"width"
+],
+"hh:breakSetting": [
+"breakLatinWord",
+"breakNonLatinWord",
+"keepLines",
+"keepWithNext",
+"lineWrap",
+"pageBreakBefore",
+"widowOrphan"
+],
+"hh:charPr": [
+"borderFillIDRef",
+"height",
+"id",
+"shadeColor",
+"symMark",
+"textColor",
+"useFontSpace",
+"useKerning"
+],
+"hh:charProperties": [
+"itemCnt"
+],
+"hh:compatibleDocument": [
+"targetProgram"
+],
+"hh:diagonal": [
+"color",
+"type",
+"width"
+],
+"hh:docOption": [],
+"hh:font": [
+"face",
+"id",
+"isEmbedded",
+"type"
+],
+"hh:fontRef": [
+"hangul",
+"hanja",
+"japanese",
+"latin",
+"other",
+"symbol",
+"user"
+],
+"hh:fontface": [
+"fontCnt",
+"lang"
+],
+"hh:fontfaces": [
+"itemCnt"
+],
+"hh:head": [
+"secCnt",
+"version",
+"xmlns:config",
+"xmlns:dc",
+"xmlns:epub",
+"xmlns:ha",
+"xmlns:hc",
+"xmlns:hh",
+"xmlns:hhs",
+"xmlns:hm",
+"xmlns:hp",
+"xmlns:hp10",
+"xmlns:hpf",
+"xmlns:hs",
+"xmlns:hwpunitchar",
+"xmlns:ooxmlchart",
+"xmlns:opf"
+],
+"hh:heading": [
+"idRef",
+"level",
+"type"
+],
+"hh:layoutCompatibility": [],
+"hh:leftBorder": [
+"color",
+"type",
+"width"
+],
+"hh:lineSpacing": [
+"type",
+"unit",
+"value"
+],
+"hh:linkinfo": [
+"footnoteInherit",
+"pageInherit",
+"path"
+],
+"hh:margin": [],
+"hh:numbering": [
+"id",
+"start"
+],
+"hh:numberings": [
+"itemCnt"
+],
+"hh:offset": [
+"hangul",
+"hanja",
+"japanese",
+"latin",
+"other",
+"symbol",
+"user"
+],
+"hh:outline": [
+"type"
+],
+"hh:paraHead": [
+"align",
+"autoIndent",
+"charPrIDRef",
+"checkable",
+"level",
+"numFormat",
+"start",
+"textOffset",
+"textOffsetType",
+"useInstWidth",
+"widthAdjust"
+],
+"hh:paraPr": [
+"checked",
+"condense",
+"fontLineHeight",
+"id",
+"snapToGrid",
+"suppressLineNumbers",
+"tabPrIDRef"
+],
+"hh:paraProperties": [
+"itemCnt"
+],
+"hh:ratio": [
+"hangul",
+"hanja",
+"japanese",
+"latin",
+"other",
+"symbol",
+"user"
+],
+"hh:refList": [],
+"hh:relSz": [
+"hangul",
+"hanja",
+"japanese",
+"latin",
+"other",
+"symbol",
+"user"
+],
+"hh:rightBorder": [
+"color",
+"type",
+"width"
+],
+"hh:shadow": [
+"color",
+"offsetX",
+"offsetY",
+"type"
+],
+"hh:slash": [
+"Crooked",
+"isCounter",
+"type"
+],
+"hh:spacing": [
+"hangul",
+"hanja",
+"japanese",
+"latin",
+"other",
+"symbol",
+"user"
+],
+"hh:strikeout": [
+"color",
+"shape"
+],
+"hh:style": [
+"charPrIDRef",
+"engName",
+"id",
+"langID",
+"lockForm",
+"name",
+"nextStyleIDRef",
+"paraPrIDRef",
+"type"
+],
+"hh:styles": [
+"itemCnt"
+],
+"hh:tabPr": [
+"autoTabLeft",
+"autoTabRight",
+"id"
+],
+"hh:tabProperties": [
+"itemCnt"
+],
+"hh:topBorder": [
+"color",
+"type",
+"width"
+],
+"hh:trackchageConfig": [
+"flags"
+],
+"hh:typeInfo": [
+"armStyle",
+"contrast",
+"familyType",
+"letterform",
+"midline",
+"proportion",
+"strokeVariation",
+"weight",
+"xHeight"
+],
+"hh:underline": [
+"color",
+"shape",
+"type"
+],
+"hp:autoNumFormat": [
+"prefixChar",
+"suffixChar",
+"supscript",
+"type",
+"userChar"
+],
+"hp:case": [
+"hp:required-namespace"
+],
+"hp:cellAddr": [
+"colAddr",
+"rowAddr"
+],
+"hp:cellMargin": [
+"bottom",
+"left",
+"right",
+"top"
+],
+"hp:cellSpan": [
+"colSpan",
+"rowSpan"
+],
+"hp:cellSz": [
+"height",
+"width"
+],
+"hp:colPr": [
+"colCount",
+"id",
+"layout",
+"sameGap",
+"sameSz",
+"type"
+],
+"hp:colSz": [
+"gap",
+"width"
+],
+"hp:ctrl": [],
+"hp:default": [],
+"hp:endNotePr": [],
+"hp:footNotePr": [],
+"hp:grid": [
+"charGrid",
+"lineGrid",
+"wonggojiFormat"
+],
+"hp:inMargin": [
+"bottom",
+"left",
+"right",
+"top"
+],
+"hp:lineNumberShape": [
+"countBy",
+"distance",
+"restartType",
+"startNumber"
+],
+"hp:lineseg": [
+"baseline",
+"flags",
+"horzpos",
+"horzsize",
+"spacing",
+"textheight",
+"textpos",
+"vertpos",
+"vertsize"
+],
+"hp:linesegarray": [],
+"hp:margin": [
+"bottom",
+"footer",
+"gutter",
+"header",
+"left",
+"right",
+"top"
+],
+"hp:noteLine": [
+"color",
+"length",
+"type",
+"width"
+],
+"hp:noteSpacing": [
+"aboveLine",
+"belowLine",
+"betweenNotes"
+],
+"hp:numbering": [
+"newNum",
+"type"
+],
+"hp:offset": [
+"bottom",
+"left",
+"right",
+"top"
+],
+"hp:outMargin": [
+"bottom",
+"left",
+"right",
+"top"
+],
+"hp:p": [
+"columnBreak",
+"id",
+"merged",
+"pageBreak",
+"paraPrIDRef",
+"styleIDRef"
+],
+"hp:pageBorderFill": [
+"borderFillIDRef",
+"fillArea",
+"footerInside",
+"headerInside",
+"textBorder",
+"type"
+],
+"hp:pagePr": [
+"gutterType",
+"height",
+"landscape",
+"width"
+],
+"hp:placement": [
+"beneathText",
+"place"
+],
+"hp:pos": [
+"affectLSpacing",
+"allowOverlap",
+"flowWithText",
+"holdAnchorAndSO",
+"horzAlign",
+"horzOffset",
+"horzRelTo",
+"treatAsChar",
+"vertAlign",
+"vertOffset",
+"vertRelTo"
+],
+"hp:run": [
+"charPrIDRef"
+],
+"hp:secPr": [
+"id",
+"masterPageCnt",
+"memoShapeIDRef",
+"outlineShapeIDRef",
+"spaceColumns",
+"tabStop",
+"tabStopUnit",
+"tabStopVal",
+"textDirection",
+"textVerticalWidthHead"
+],
+"hp:startNum": [
+"equation",
+"page",
+"pageStartsOn",
+"pic",
+"tbl"
+],
+"hp:subList": [
+"hasNumRef",
+"hasTextRef",
+"id",
+"lineWrap",
+"linkListIDRef",
+"linkListNextIDRef",
+"textDirection",
+"textHeight",
+"textWidth",
+"vertAlign"
+],
+"hp:switch": [],
+"hp:sz": [
+"height",
+"heightRelTo",
+"protect",
+"width",
+"widthRelTo"
+],
+"hp:t": [],
+"hp:tbl": [
+"borderFillIDRef",
+"cellSpacing",
+"colCnt",
+"dropcapstyle",
+"id",
+"lock",
+"noAdjust",
+"numberingType",
+"pageBreak",
+"repeatHeader",
+"rowCnt",
+"textFlow",
+"textWrap",
+"zOrder"
+],
+"hp:tc": [
+"borderFillIDRef",
+"dirty",
+"editable",
+"hasMargin",
+"header",
+"name",
+"protect"
+],
+"hp:tr": [],
+"hp:visibility": [
+"border",
+"fill",
+"hideFirstEmptyLine",
+"hideFirstFooter",
+"hideFirstHeader",
+"hideFirstMasterPage",
+"hideFirstPageNum",
+"showLineNumber"
+],
+"hs:sec": [
+"xmlns:config",
+"xmlns:dc",
+"xmlns:epub",
+"xmlns:ha",
+"xmlns:hc",
+"xmlns:hh",
+"xmlns:hhs",
+"xmlns:hm",
+"xmlns:hp",
+"xmlns:hp10",
+"xmlns:hpf",
+"xmlns:hs",
+"xmlns:hwpunitchar",
+"xmlns:ooxmlchart",
+"xmlns:opf"
+],
+"hv:HCFVersion": [
+"appVersion",
+"application",
+"buildNumber",
+"major",
+"micro",
+"minor",
+"os",
+"tagetApplication",
+"xmlVersion",
+"xmlns:hv"
+],
+"ocf:container": [
+"xmlns:hpf",
+"xmlns:ocf"
+],
+"ocf:rootfile": [
+"full-path",
+"media-type"
+],
+"ocf:rootfiles": [],
+"odf:manifest": [
+"xmlns:odf"
+],
+"opf:item": [
+"href",
+"id",
+"media-type"
+],
+"opf:itemref": [
+"idref",
+"linear"
+],
+"opf:language": [],
+"opf:manifest": [],
+"opf:meta": [
+"content",
+"name"
+],
+"opf:metadata": [],
+"opf:package": [
+"id",
+"unique-identifier",
+"version",
+"xmlns:config",
+"xmlns:dc",
+"xmlns:epub",
+"xmlns:ha",
+"xmlns:hc",
+"xmlns:hh",
+"xmlns:hhs",
+"xmlns:hm",
+"xmlns:hp",
+"xmlns:hp10",
+"xmlns:hpf",
+"xmlns:hs",
+"xmlns:hwpunitchar",
+"xmlns:ooxmlchart",
+"xmlns:opf"
+],
+"opf:spine": [],
+"opf:title": []
+}
